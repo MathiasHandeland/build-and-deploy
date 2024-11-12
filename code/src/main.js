@@ -7,7 +7,7 @@ const minutesLeft = document.getElementById("minutes-left"); // New element
 const render = () => {
   const now = new Date();
   timeLeft.innerText = getSecondsLeftOfYear(now);
-  minutesLeft.innerText = getMinutesLeftOfYear(now); // Set minutes left
+  minutesLeft.innerText = getMinutesLeftOfYear(now).toFixed(2); // Format for display
   timeContainer.innerText = getTimeString(now);
 }
 
