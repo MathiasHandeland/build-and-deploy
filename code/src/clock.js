@@ -22,7 +22,9 @@ export const getMinutesLeftOfYear = (now) => {
     const startOfNextYear = getNextYearDate(now);
     const startOfNextYearMillis = startOfNextYear.getTime();
     const nowMillis = now.getTime();
-    return Math.floor((startOfNextYearMillis - nowMillis) / (1000 * 60)); // Divide by 1000*60 to get minutes
+    const minutesLeft = (startOfNextYearMillis - nowMillis) / (1000 * 60); // Division to get minutes
+    return minutesLeft.toFixed(2); // Convert to string with two decimal places
 };
+
 
     
