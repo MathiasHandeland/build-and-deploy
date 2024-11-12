@@ -19,6 +19,10 @@ export const getSecondsLeftOfYear = (now) => {
 }
 
 export const getMinutesLeftOfYear = (now) => {
-    return Math.floor(getSecondsLeftOfYear(now) / 60);
-}
+    const startOfNextYear = getNextYearDate(now);
+    const startOfNextYearMillis = startOfNextYear.getTime();
+    const nowMillis = now.getTime();
+    return Math.floor((startOfNextYearMillis - nowMillis) / (1000 * 60)); // Divide by 1000*60 to get minutes
+};
+
     
